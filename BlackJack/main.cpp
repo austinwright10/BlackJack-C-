@@ -6,9 +6,17 @@
 //
 
 #include <iostream>
+#include <string>
+using namespace std;
 
 int main(int argc, const char * argv[]) {
-    // insert code here...
-    std::cout << "Hello, World!\n";
+    
+    char startGame;
+    
+    cout << "Welcome to BlackJack!" << endl;
+    
+    cout << "Press 'Enter' to start the game." << endl;
+    cin >> startGame;
+    
     return 0;
-}
+    }
