@@ -9,14 +9,23 @@
 #include <string>
 using namespace std;
 
-int main(int argc, const char * argv[]) {
+void player();
+void dealer();
+void winner();
+void run_game();
+
+
+int main() {
     
     char startGame;
     
     cout << "Welcome to BlackJack!" << endl;
     
     cout << "Press 'Enter' to start the game." << endl;
-    cin >> startGame;
+    cin.get(startGame);
     
-    return 0;
+    if (startGame == '\n') {
+        cout << "worked" << endl;
     }
+    return 0;
+}
