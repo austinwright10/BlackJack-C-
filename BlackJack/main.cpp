@@ -47,7 +47,6 @@ void run_game();
 int main() {
     char startGame;
     int play_counter = 0;
-    int cardResult = card();
     vector<int> player_hand = player();
     vector<int> dealer_hand = dealer();
 
