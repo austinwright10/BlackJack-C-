@@ -10,7 +10,7 @@ int card() {
     std::random_device rd;
     std::mt19937 gen(rd());
     std::uniform_int_distribution<int> distribution(1, 11);
-    int random_number = distribution(gen);
+    auto random_number = distribution(gen);
     if (random_number == 1) {
         random_number = 'A';
     }
@@ -69,6 +69,9 @@ int main() {
 
             cout << "Dealer's hand: ";
             for (int card : dealer_hand) {
+                if (dealer_hand[0]) {
+                    card = '?';
+                }
                 cout << card << " ";
             }
             cout << endl;
