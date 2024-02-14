@@ -71,7 +71,30 @@ int dealer_total() {
         }
     return total;
 }
-int player_total();
+int player_total() {
+    int total = 0;
+    vector<char> player_hand = player();
+    
+    for (char card : player_hand) {
+            // Convert card character to numerical value and add to total
+            switch (card) {
+                case '2': total += 2; break;
+                case '3': total += 3; break;
+                case '4': total += 4; break;
+                case '5': total += 5; break;
+                case '6': total += 6; break;
+                case '7': total += 7; break;
+                case '8': total += 8; break;
+                case '9': total += 9; break;
+                case 'J':
+                case 'Q':
+                case 'K': total += 10; break;
+                case 'A': total += 11; break;
+                default: break;
+            }
+        }
+    return total;
+}
 void winner();
 
 int main() {
@@ -104,7 +127,8 @@ int main() {
             }
             cout << endl;
             cout << "Dealer's points: " << dealer_total() << endl;
-//            cout << "Player's points: " << player_total() << endl;
+            cout << "Player's points: " << player_total() << endl;
+            cout << endl;
             string player_hit_pass;
             cout << "Would you like to hit or pass?" << endl;
             cin >> player_hit_pass;
@@ -119,8 +143,14 @@ int main() {
             }
         }
     while (play_counter == 1) {
+        cout << "Player's hand: ";
         for (int i = 0; i < player_hand.size(); ++i) {
             cout << player_hand[i] << " ";
+        }
+        cout << endl;
+        cout << "Dealer's hand: ";
+        for (int i = 0; i < 2; ++i) {
+            cout << dealer_hand[i] << " ";
         }
         cout << endl;
     }
